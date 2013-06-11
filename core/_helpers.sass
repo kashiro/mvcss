@@ -58,6 +58,12 @@
 
 // ----- Mixins ----- //
 
+// set property by rem
+// e.g. rem-prop(font-size, 1.6);
+=rem-prop($prop-name, $val)
+  $prop-name: #{$val}px
+  $prop-name: #{$val}rem
+
 // +respond-to()
 // -- Generates a specified media query, which
 //    defaults to 'min-width' and 'screen'
