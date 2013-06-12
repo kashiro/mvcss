@@ -72,4 +72,73 @@
   @media #{$media} and ($query: $val)
     @content
 
+
+@mixin position-center($width, $height)
+  position: absolute
+  top: 50%
+  left: 50%
+  @if $width  != '' margin-left: -$width / 2
+  @if $height != '' margin-top: -$height / 2
+
+
+@mixin position($position, $keyword, $value1, $value2)
+  position: $position
+  @if $keyword == tr {
+    top: $value1
+    right: $value2
+  } @else if $keyword == tl {
+    top: $value1
+    left: $value2
+  } @else if $keyword == br {
+    bottom: $value1
+    right: $value2
+  } @else if $keyword == bl {
+    bottom: $value1
+    left: $value2
+  }
+
+@mixin retina-background($url, $option)
+  background: image-url($url) + " #{$option}"
+  background-size: round(image-width($url) / 2) round(image-height($url) / 2)
+
+
+@mixin ir($url)
+  width: round(image-width($url)
+  height: round(image-height($url)
+  @extend %ir
+  background: url($url) no-repeat center center
+
+
+@mixin pseudo-elm($url, $top, $left, $width, $height)
+  display: block
+  position: absolute
+  content: ''
+  width: $width
+  height: $height
+  top: $top
+  left: $left
+  background: image-url($url) no-repeat top left
+
+
+@mixin sprite-img($map, $name, $map-url, $max-width)
+    background-image: $map-url
+    background-repeat: no-repeat
+    display: block
+    height: image-height(sprite-file($map-url, $name))
+    width: image-width(sprite-file($map-url, $name))
+    $ypos: round(nth(sprite-position($map-url, $name), 2))
+    background-position: 0 $ypos
+    @include background-size($max-width auto)
+
+
+@mixin sprite-img-retina($map, $name, $map-url, $max-width)
+    background-image: $map-url
+    background-repeat: no-repeat
+    display: block
+    height: image-height(sprite-file($map-url, $name)) / 2
+    width: image-width(sprite-file($map-url, $name)) / 2
+    $ypos: round(nth(sprite-position($map-url, $name), 2) / 2)
+    background-position: 0 $ypos
+    @include background-size(($max-width / 2) auto)
+
 // ----- Animations ----- //
