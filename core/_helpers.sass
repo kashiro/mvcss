@@ -124,9 +124,9 @@
     background-image: $map-url
     background-repeat: no-repeat
     display: block
-    height: image-height(sprite-file($map-url, $name))
-    width: image-width(sprite-file($map-url, $name))
-    $ypos: round(nth(sprite-position($map-url, $name), 2))
+    height: image-height(sprite-file($map, $name))
+    width: image-width(sprite-file($map, $name))
+    $ypos: round(nth(sprite-position($map, $name), 2))
     background-position: 0 $ypos
     @include background-size($max-width auto)
 
@@ -135,9 +135,9 @@
     background-image: $map-url
     background-repeat: no-repeat
     display: block
-    height: image-height(sprite-file($map-url, $name)) / 2
-    width: image-width(sprite-file($map-url, $name)) / 2
-    $ypos: round(nth(sprite-position($map-url, $name), 2) / 2)
+    height: image-height(sprite-file($map, $name)) / 2
+    width: image-width(sprite-file($map, $name)) / 2
+    $ypos: round(nth(sprite-position($map, $name), 2) / 2)
     background-position: 0 $ypos
     @include background-size(($max-width / 2) auto)
 
