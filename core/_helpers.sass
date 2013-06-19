@@ -121,24 +121,24 @@
 
 
 @mixin sprite-img($map, $name, $map-url, $max-width)
-    background-image: $map-url
-    background-repeat: no-repeat
-    display: block
-    height: image-height(sprite-file($map, $name))
-    width: image-width(sprite-file($map, $name))
-    $ypos: round(nth(sprite-position($map, $name), 2))
-    background-position: 0 $ypos
-    @include background-size($max-width auto)
+  background-image: $map-url
+  background-repeat: no-repeat
+  display: block
+  height: image-height(sprite-file($map, $name))
+  width: image-width(sprite-file($map, $name))
+  $ypos: round(nth(sprite-position($map, $name), 2))
+  background-position: 0 $ypos
+  @include background-size($max-width auto)
 
 
 @mixin sprite-img-retina($map, $name, $map-url, $max-width)
-    background-image: $map-url
-    background-repeat: no-repeat
-    display: block
-    height: image-height(sprite-file($map, $name)) / 2
-    width: image-width(sprite-file($map, $name)) / 2
-    $ypos: round(nth(sprite-position($map, $name), 2) / 2)
-    background-position: 0 $ypos
-    @include background-size(($max-width / 2) auto)
+  background-image: $map-url
+  background-repeat: no-repeat
+  display: block
+  height: image-height(sprite-file($map, $name)) / 2
+  width: image-width(sprite-file($map, $name)) / 2
+  $ypos: round(nth(sprite-position($map, $name), 2) / 2)
+  background-position: 0 $ypos
+  @include background-size(($max-width / 2) auto)
 
 // ----- Animations ----- //
