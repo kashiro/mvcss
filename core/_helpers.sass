@@ -77,25 +77,25 @@
   position: absolute
   top: 50%
   left: 50%
-  @if $width  != '' margin-left: -$width / 2
-  @if $height != '' margin-top: -$height / 2
+  margin-left: -$width / 2 * -1
+  margin-top: -$height / 2 * -1
 
 
 @mixin position($position, $keyword, $value1, $value2)
   position: $position
-  @if $keyword == tr {
+  @if $keyword == tr
     top: $value1
     right: $value2
-  } @else if $keyword == tl {
+  @else if $keyword == tl
     top: $value1
     left: $value2
-  } @else if $keyword == br {
+  @else if $keyword == br
     bottom: $value1
     right: $value2
-  } @else if $keyword == bl {
+  @else if $keyword == bl
     bottom: $value1
     left: $value2
-  }
+
 
 @mixin retina-background($url, $option)
   background: image-url($url) + " #{$option}"
@@ -103,8 +103,8 @@
 
 
 @mixin ir($url)
-  width: round(image-width($url)
-  height: round(image-height($url)
+  width: round(image-width($url))
+  height: round(image-height($url))
   @extend %ir
   background: url($url) no-repeat center center
 
