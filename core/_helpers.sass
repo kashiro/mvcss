@@ -132,11 +132,11 @@
 
 
 @mixin sprite-img-retina($map, $name, $map-url, $max-width)
-    background-image: $map-url
-    background-repeat: no-repeat
-    display: block
-    height: image-height(sprite-file($map-url, $name)) / 2
-    width: image-width(sprite-file($map-url, $name)) / 2
-    $ypos: round(nth(sprite-position($map-url, $name), 2) / 2)
-    background-position: 0 $ypos
-    @include background-size(ceil(($max-width / 2)) auto)
+  background-image: $map-url
+  background-repeat: no-repeat
+  display: block
+  height: image-height(sprite-file($map-url, $name)) / 2
+  width: image-width(sprite-file($map-url, $name)) / 2
+  $ypos: round(nth(sprite-position($map-url, $name), 2) / 2)
+  background-position: 0 $ypos
+  @include background-size(ceil(($max-width / 2)) auto)
