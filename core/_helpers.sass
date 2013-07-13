@@ -139,6 +139,6 @@
     width: image-width(sprite-file($map-url, $name)) / 2
     $ypos: round(nth(sprite-position($map-url, $name), 2) / 2)
     background-position: 0 $ypos
-    @include background-size(($max-width / 2) auto)
+    @include background-size(ceil(($max-width / 2)) auto)
 
 // ----- Animations ----- //
